@@ -27,7 +27,6 @@ const Navbar = ({ isAuth, setIsAuth, profile, setProfile }) => {
 
   const handleAuthentication = async () => {
     console.log("Authenticating user")
-
     const provider = new GoogleAuthProvider();
 
     try {
