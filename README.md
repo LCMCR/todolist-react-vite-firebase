@@ -8,3 +8,5 @@ The app is built with React and Vite.
 
 Some components are from Mantine.
 Tabler Icons are used for the icons. And react-loader-spinner is used for the loading spinner.
+
+https://modern-todolist-d080c.web.app/
