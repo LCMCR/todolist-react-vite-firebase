@@ -14,12 +14,14 @@ const Input = ({ uid }) => {
     console.log("adding to firestore- ", value, uid);
 
     if (!uid) {
+      setValue("");
       showNotification({
         message: "Please login to create a todo",
         title: "Auth error",
         color: "red"
       })
     } else if (!value) {
+        setValue("");
         showNotification({
           message: "Please enter a valid value",
           title: "Validation error",
@@ -27,15 +29,14 @@ const Input = ({ uid }) => {
       })
     } else {
       // Add todo to database
+      setValue("");
       const todosRef = collection(db, "users", uid, "todos");
       const todoRef = await addDoc(todosRef, {
         completed: false,
         title: value,
         createdAt: serverTimestamp()
       });
-  
-      setValue("");
-  
+      
       console.log(`Todo created with id: ${todoRef.id}`);
     }
 
@@ -45,7 +46,7 @@ const Input = ({ uid }) => {
     <InputContainer onSubmit={handleSubmit}>
       <StyledInput
         type="text"
-        placeholder="add details"
+        placeholder="add item"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
