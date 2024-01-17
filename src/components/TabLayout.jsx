@@ -1,12 +1,11 @@
-import Input from "./Input"
-import DeleteBox from "./DeleteBox"
+/* eslint-disable react/prop-types */
+import Input from "./Input/Index";
 
 const TabLayout = ({ children, uid }) => {
   return (
     <>
       <Input uid={uid} />
       {children}
-      <DeleteBox uid={uid} />
     </>
   )
 }
